@@ -1,1 +1,174 @@
-
+{
+  "categories": [
+    {
+      "alimente": [
+        {
+          "id": 8,
+          "nume_produs": "Cafea boabe Arabica Premium",
+          "nume_producator": "CoffeeMasters",
+          "pret": 79.99,
+          "rating": 4.9,
+          "descriere": "Cafea 100% Arabica, prăjire medie, aromă intensă.",
+          "imagine": "images/cafea-arabica.png"
+        },
+        {
+          "id": 7,
+          "nume_produs": "Ciocolată neagră premium 85% cacao",
+          "nume_producator": "SweetChoco",
+          "pret": 14.99,
+          "rating": 4.8,
+          "descriere": "Ciocolată fină cu 85% cacao, fără zahăr adăugat.",
+          "imagine": "images/ciocolata-neagra.png"
+        }
+      ],
+      "fashion": [
+        {
+          "id": 6,
+          "nume_produs": "Pantofi sport UltraRun",
+          "nume_producator": "ActiveWear",
+          "pret": 349.99,
+          "rating": 4.6,
+          "descriere": "Pantofi sport confortabili, ideali pentru alergare și antrenamente.",
+          "imagine": "images/pantofi-sport.png"
+        },
+        {
+          "id": 5,
+          "nume_produs": "Rochie elegantă Black Night",
+          "nume_producator": "FashionStyle",
+          "pret": 499.99,
+          "rating": 4.3,
+          "descriere": "Rochie de seară din mătase, croială elegantă, culoare neagră.",
+          "imagine": "https://images.ro/rochie_black_night.png"
+        },
+        {
+          "id": 5,
+          "nume_produs": "Rochie elegantă Black Night",
+          "nume_producator": "FashionStyle",
+          "pret": 499.99,
+          "rating": 4.3,
+          "descriere": "Rochie de seară din mătase, croială elegantă, culoare neagră.",
+          "imagine": "https://images.ro/rochie_black_night.png"
+        },
+        {
+          "id": 6,
+          "nume_produs": "Pantofi sport UltraRun",
+          "nume_producator": "ActiveWear",
+          "pret": 349.99,
+          "rating": 4.6,
+          "descriere": "Pantofi sport confortabili, ideali pentru alergare și antrenamente.",
+          "imagine": "https://images.ro/pantofi_ultrarun.png"
+        }
+      ],
+      "electronice": [
+        {
+          "id": 10,
+          "nume_produs": "Aspirator Robot CleanBot X",
+          "nume_producator": "HomeGenius",
+          "pret": 1799.99,
+          "rating": 4.6,
+          "descriere": "Aspirator robot inteligent cu mapare laser și autonomie 120 min.",
+          "imagine": "https://images.ro/aspirator_robot_cleanbot.png"
+        },
+        {
+          "id": 9,
+          "nume_produs": "Televizor Smart 4K UltraHD",
+          "nume_producator": "VisionTech",
+          "pret": 3299.99,
+          "rating": 4.7,
+          "descriere": "Televizor 4K cu ecran de 55 inch, compatibil cu aplicații Smart TV.",
+          "imagine": "https://images.ro/tv_smart_4k.png"
+        },
+        {
+          "id": 4,
+          "nume_produs": "Frigider SmartCool X",
+          "nume_producator": "ColdTech",
+          "pret": 3499.99,
+          "rating": 4.7,
+          "descriere": "Frigider inteligent cu WiFi, control vocal și sistem No Frost.",
+          "imagine": "https://images.ro/frigider_smartcool_x.png"
+        },
+        {
+          "id": 3,
+          "nume_produs": "Mașină de spălat EcoClean 5000",
+          "nume_producator": "HomeAppliances",
+          "pret": 2499.99,
+          "rating": 4.6,
+          "descriere": "Mașină de spălat eficientă energetic, cu 1400 rpm și capacitate de 8kg.",
+          "imagine": "https://images.ro/masina_spalat_ecoclean.png"
+        },
+        {
+          "id": 2,
+          "nume_produs": "Laptop UltraBook Pro",
+          "nume_producator": "MegaTech",
+          "pret": 5999.99,
+          "rating": 4.8,
+          "descriere": "Laptop performant cu procesor Intel i7, 16GB RAM și SSD 1TB.",
+          "imagine": "https://images.ro/laptop_ultrabook_pro.png"
+        },
+        {
+          "id": 1,
+          "nume_produs": "Smartphone X1",
+          "nume_producator": "TechBrand",
+          "pret": 2999.99,
+          "rating": 4.5,
+          "descriere": "Smartphone cu ecran OLED de 6.5 inch, procesor octa-core și 128GB stocare.",
+          "imagine": "https://images.ro/smartphone_x1.png"
+        },
+        {
+          "id": 2,
+          "nume_produs": "Laptop UltraBook Pro",
+          "nume_producator": "MegaTech",
+          "pret": 5999.99,
+          "rating": 4.8,
+          "descriere": "Laptop performant cu procesor Intel i7, 16GB RAM și SSD 1TB.",
+          "imagine": "https://images.ro/laptop_ultrabook_pro.png"
+        },
+        {
+          "id": 3,
+          "nume_produs": "Mașină de spălat EcoClean 5000",
+          "nume_producator": "HomeAppliances",
+          "pret": 2499.99,
+          "rating": 4.6,
+          "descriere": "Mașină de spălat eficientă energetic, cu 1400 rpm și capacitate de 8kg.",
+          "imagine": "https://images.ro/masina_spalat_ecoclean.png"
+        },
+        {
+          "id": 4,
+          "nume_produs": "Frigider SmartCool X",
+          "nume_producator": "ColdTech",
+          "pret": 3499.99,
+          "rating": 4.7,
+          "descriere": "Frigider inteligent cu WiFi, control vocal și sistem No Frost.",
+          "imagine": "https://images.ro/frigider_smartcool_x.png"
+        },
+        {
+          "id": 9,
+          "nume_produs": "Televizor Smart 4K UltraHD",
+          "nume_producator": "VisionTech",
+          "pret": 3299.99,
+          "rating": 4.7,
+          "descriere": "Televizor 4K cu ecran de 55 inch, compatibil cu aplicații Smart TV.",
+          "imagine": "https://images.ro/tv_smart_4k.png"
+        },
+        {
+          "id": 10,
+          "nume_produs": "Aspirator Robot CleanBot X",
+          "nume_producator": "HomeGenius",
+          "pret": 1799.99,
+          "rating": 4.6,
+          "descriere": "Aspirator robot inteligent cu mapare laser și autonomie 120 min.",
+          "imagine": "https://images.ro/aspirator_robot_cleanbot.png"
+        },
+        {
+          "id": 1,
+          "nume_produs": "Smartphone X1",
+          "nume_producator": "TechBrand",
+          "pret": 2999.99,
+          "rating": 4.5,
+          "descriere": "Smartphone cu ecran OLED de 6.5 inch, procesor octa-core și 128GB stocare.",
+          "imagine": "https://images.ro/smartphone_x1.png"
+        }
+      ]
+    }
+  ]
+}
