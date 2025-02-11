@@ -43,20 +43,20 @@ def display_products(parent, category, products):
 		text_label.pack(side='left', padx=10)
 
 
+def on_mouse_wheel(event, canvas):
+	if event.delta > 0:
+		canvas.yview_scroll(-1, "units")
+	else:
+		canvas.yview_scroll(1, "units")
+
+
 root = tk.Tk()
 root.title("Catalog Produse")
+root.geometry("600x700")
 
-# for category, products in data["categories"][0].items():
-# 	display_products(category.capitalize(), products)
-#
-# root.mainloop()
-
-# Creare Canvas pentru scroll
 canvas = tk.Canvas(root)
 scrollbar = ttk.Scrollbar(root, orient="vertical", command=canvas.yview)
 scroll_frame = ttk.Frame(canvas)
-
-# Configurare scroll
 scroll_frame.bind(
     "<Configure>",
     lambda e: canvas.configure(
@@ -72,5 +72,7 @@ scrollbar.pack(side="right", fill="y")
 
 for category, products in data["categories"][0].items():
 	display_products(scroll_frame, category.capitalize(), products)
+
+root.bind_all("<MouseWheel>", lambda event: on_mouse_wheel(event, canvas))
 
 root.mainloop()
