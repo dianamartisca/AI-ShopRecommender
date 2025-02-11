@@ -8,6 +8,8 @@
           "nume_producator": "CoffeeMasters",
           "pret": 79.99,
           "rating": 4.9,
+          "ingrediente": "cafea",
+          "cantitate": "1 kg",
           "descriere": "Cafea 100% Arabica, prăjire medie, aromă intensă.",
           "imagine": "images/cafea-arabica.png"
         },
@@ -17,84 +19,170 @@
           "nume_producator": "SweetChoco",
           "pret": 14.99,
           "rating": 4.8,
+          "ingrediente": "cacao, zahăr, grăsimi vegetale",
+          "cantitate": "100 g",
           "descriere": "Ciocolată fină cu 85% cacao, fără zahăr adăugat.",
           "imagine": "images/ciocolata-neagra.png"
-        }
+        },
+        {
+          "id": 11,
+          "nume_produs": "Semințe de chia",
+          "nume_producator": "Planteea",
+          "pret": 22.80,
+          "rating": 4.7,
+          "ingrediente": "chia",
+          "cantitate": "500 g",
+          "descriere": "Semințe de chia raw, 100% naturale.",
+          "imagine": "images/chia.png"
+        },
+        {
+          "id": 12,
+          "nume_produs": "Ulei de avocado",
+          "nume_producator": "NextFarms",
+          "pret": 59.99,
+          "rating": 4.4,
+          "ingrediente": "avocado",
+          "cantitate": "250 ml",
+          "descriere": "Ulei de Avocado presat la rece, natural, virgin.",
+          "imagine": "images/ulei-avocado.png"
+        },
+        {
+          "id": 13,
+          "nume_produs": "Paste lungi spaghetti n5",
+          "nume_producator": "Barilla",
+          "pret": 11.45,
+          "rating": 4.7,
+          "ingrediente": "griș din grâu, apă",
+          "cantitate": "1000 g",
+          "descriere": "Paste originare din Italia, diametru universal.",
+          "imagine": "images/paste-spaghetti.png"
+        },
+        {
+          "id": 14,
+          "nume_produs": "Paste scurte fusilli n98",
+          "nume_producator": "Barilla",
+          "pret": 13.99,
+          "rating": 4.7,
+          "ingrediente": "griș din grâu, apă",
+          "cantitate": "1000 g",
+          "descriere": "Paste originare din Italia.",
+          "imagine": "images/paste-fusilli.png"
+        },
+        {
+          "id": 15,
+          "nume_produs": "Paste scurte penne rigate n73",
+          "nume_producator": "Barilla",
+          "pret": 13.10,
+          "rating": 4.7,
+          "ingrediente": "griș din grâu, apă",
+          "cantitate": "1000 g",
+          "descriere": "Paste originare din Italia din grâu dur de cea mai bună calitate.",
+          "imagine": "images/paste-penne.png"
+        },
+        {
+          "id": 16,
+          "nume_produs": "Sardine în ulei de măsline",
+          "nume_producator": "Rizzoli",
+          "pret": 12.09,
+          "rating": 4.7,
+          "ingrediente": "sardine, ulei de măsline, sare",
+          "cantitate": "120 g",
+          "descriere": "Fileuri de sardine pescuite în larg, lucrate în întregime manual și conservate în ulei de măsline extravirgin bio.",
+          "imagine": "images/sardine.png"
+        },
+        {
+          "id": 17,
+          "nume_produs": "Mazăre conservă",
+          "nume_producator": "Piselli",
+          "pret": 5.52,
+          "rating": 4.8,
+          "ingrediente": "mazăre, apă, sare",
+          "cantitate": "400 g",
+          "descriere": "Conservă de mazăre fină și dulce, gata preparată și bună de tocăniță.",
+          "imagine": "images/mazare.png"
+        }       
       ],
       "fashion": [
         {
+          "id": 5,
+          "nume_produs": "Rochie elegantă Black Night",
+          "nume_producator": "FashionStyle",
+          "pret": 499.99,
+          "rating": 4.3,
+          "culoare": "neagră",
+          "descriere": "Rochie de seară din mătase, croială elegantă.",
+          "imagine": "images/rochie-neagra.png"
+        },
+        {
           "id": 6,
           "nume_produs": "Pantofi sport UltraRun",
           "nume_producator": "ActiveWear",
           "pret": 349.99,
           "rating": 4.6,
-          "descriere": "Pantofi sport confortabili, ideali pentru alergare și antrenamente.",
+          "culoare": "neagră",
+          "descriere": "Pantofi sport confortabili, din pânză, ideali pentru alergare și antrenamente.",
           "imagine": "images/pantofi-sport.png"
         },
         {
-          "id": 5,
-          "nume_produs": "Rochie elegantă Black Night",
-          "nume_producator": "FashionStyle",
-          "pret": 499.99,
-          "rating": 4.3,
-          "descriere": "Rochie de seară din mătase, croială elegantă, culoare neagră.",
-          "imagine": "https://images.ro/rochie_black_night.png"
-        },
-        {
-          "id": 5,
-          "nume_produs": "Rochie elegantă Black Night",
-          "nume_producator": "FashionStyle",
-          "pret": 499.99,
-          "rating": 4.3,
-          "descriere": "Rochie de seară din mătase, croială elegantă, culoare neagră.",
-          "imagine": "https://images.ro/rochie_black_night.png"
-        },
-        {
-          "id": 6,
-          "nume_produs": "Pantofi sport UltraRun",
-          "nume_producator": "ActiveWear",
-          "pret": 349.99,
+          "id": 18,
+          "nume_produs": "Hanorac cu imprimeu Mickey Mouse",
+          "nume_producator": "LC Waikiki",
+          "pret": 59.99,
           "rating": 4.6,
-          "descriere": "Pantofi sport confortabili, ideali pentru alergare și antrenamente.",
-          "imagine": "https://images.ro/pantofi_ultrarun.png"
+          "culoare": "roșie",
+          "descriere": "Hanorac din bumbac cu mâneci căzute.",
+          "imagine": "images/hanorac-rosu.png"
+        },
+        {
+          "id": 19,
+          "nume_produs": "Bluză de trening",
+          "nume_producator": "Nike",
+          "pret": 189.99,
+          "rating": 5.0,
+          "culoare": "neagră",
+          "descriere": "Bluză de trening lejeră, fără închidere, cu mâneci căzute Phoenix.",
+          "imagine": "images/bluza-trening.png"
+        },
+        {
+          "id": 20,
+          "nume_produs": "Rochie-cămașă",
+          "nume_producator": "LC Waikiki",
+          "pret": 49.99,
+          "rating": 4.8,
+          "culoare": "albă",
+          "descriere": "Rochie-cămașă din bumbac, croială dreaptă, mânecă trei sferturi.",
+          "imagine": "images/rochie-camasa.png"
+        },
+        {
+          "id": 21,
+          "nume_produs": "Rochie cu mâneci lungi și decupaje",
+          "nume_producator": "Acob à porter",
+          "pret": 189.99,
+          "rating": 4.7,
+          "culoare": "roșie",
+          "descriere": "Rochie elegantă cu mâneci lungi și croială evazată.",
+          "imagine": "images/rochie-rosie.png"
+        },
+        {
+          "id": 22,
+          "nume_produs": "Tricou damă",
+          "nume_producator": "Belice",
+          "pret": 69.98,
+          "rating": 5.0,
+          "culoare": "verde",
+          "descriere": "Tricou damă, cambrat cu guler tunică și mâneci semi.",
+          "imagine": "images/tricou-verde.png"
         }
       ],
       "electronice": [
         {
-          "id": 10,
-          "nume_produs": "Aspirator Robot CleanBot X",
-          "nume_producator": "HomeGenius",
-          "pret": 1799.99,
-          "rating": 4.6,
-          "descriere": "Aspirator robot inteligent cu mapare laser și autonomie 120 min.",
-          "imagine": "https://images.ro/aspirator_robot_cleanbot.png"
-        },
-        {
-          "id": 9,
-          "nume_produs": "Televizor Smart 4K UltraHD",
-          "nume_producator": "VisionTech",
-          "pret": 3299.99,
-          "rating": 4.7,
-          "descriere": "Televizor 4K cu ecran de 55 inch, compatibil cu aplicații Smart TV.",
-          "imagine": "https://images.ro/tv_smart_4k.png"
-        },
-        {
-          "id": 4,
-          "nume_produs": "Frigider SmartCool X",
-          "nume_producator": "ColdTech",
-          "pret": 3499.99,
-          "rating": 4.7,
-          "descriere": "Frigider inteligent cu WiFi, control vocal și sistem No Frost.",
-          "imagine": "https://images.ro/frigider_smartcool_x.png"
-        },
-        {
-          "id": 3,
-          "nume_produs": "Mașină de spălat EcoClean 5000",
-          "nume_producator": "HomeAppliances",
-          "pret": 2499.99,
-          "rating": 4.6,
-          "descriere": "Mașină de spălat eficientă energetic, cu 1400 rpm și capacitate de 8kg.",
-          "imagine": "https://images.ro/masina_spalat_ecoclean.png"
+          "id": 1,
+          "nume_produs": "Smartphone X1",
+          "nume_producator": "TechBrand",
+          "pret": 2999.99,
+          "rating": 4.5,
+          "descriere": "Smartphone cu ecran OLED de 6.5 inch, procesor octa-core și 128GB stocare.",
+          "imagine": "images/smartphone-x1.png"
         },
         {
           "id": 2,
@@ -103,43 +191,7 @@
           "pret": 5999.99,
           "rating": 4.8,
           "descriere": "Laptop performant cu procesor Intel i7, 16GB RAM și SSD 1TB.",
-          "imagine": "https://images.ro/laptop_ultrabook_pro.png"
-        },
-        {
-          "id": 1,
-          "nume_produs": "Smartphone X1",
-          "nume_producator": "TechBrand",
-          "pret": 2999.99,
-          "rating": 4.5,
-          "descriere": "Smartphone cu ecran OLED de 6.5 inch, procesor octa-core și 128GB stocare.",
-          "imagine": "https://images.ro/smartphone_x1.png"
-        },
-        {
-          "id": 2,
-          "nume_produs": "Laptop UltraBook Pro",
-          "nume_producator": "MegaTech",
-          "pret": 5999.99,
-          "rating": 4.8,
-          "descriere": "Laptop performant cu procesor Intel i7, 16GB RAM și SSD 1TB.",
-          "imagine": "https://images.ro/laptop_ultrabook_pro.png"
-        },
-        {
-          "id": 3,
-          "nume_produs": "Mașină de spălat EcoClean 5000",
-          "nume_producator": "HomeAppliances",
-          "pret": 2499.99,
-          "rating": 4.6,
-          "descriere": "Mașină de spălat eficientă energetic, cu 1400 rpm și capacitate de 8kg.",
-          "imagine": "https://images.ro/masina_spalat_ecoclean.png"
-        },
-        {
-          "id": 4,
-          "nume_produs": "Frigider SmartCool X",
-          "nume_producator": "ColdTech",
-          "pret": 3499.99,
-          "rating": 4.7,
-          "descriere": "Frigider inteligent cu WiFi, control vocal și sistem No Frost.",
-          "imagine": "https://images.ro/frigider_smartcool_x.png"
+          "imagine": "images/laptop-ultrabook.png"
         },
         {
           "id": 9,
@@ -148,7 +200,27 @@
           "pret": 3299.99,
           "rating": 4.7,
           "descriere": "Televizor 4K cu ecran de 55 inch, compatibil cu aplicații Smart TV.",
-          "imagine": "https://images.ro/tv_smart_4k.png"
+          "imagine": "images/televizor-smart.png"
+        }
+      ],
+      "electrocasnice": [
+        {
+          "id": 3,
+          "nume_produs": "Mașină de spălat EcoClean 5000",
+          "nume_producator": "HomeAppliances",
+          "pret": 2499.99,
+          "rating": 4.6,
+          "descriere": "Mașină de spălat eficientă energetic, cu 1400 rpm și capacitate de 8kg.",
+          "imagine": "images/masina-de-spalat.png"
+        },
+        {
+          "id": 4,
+          "nume_produs": "Frigider SmartCool X",
+          "nume_producator": "ColdTech",
+          "pret": 3499.99,
+          "rating": 4.7,
+          "descriere": "Frigider inteligent cu WiFi, control vocal și sistem No Frost.",
+          "imagine": "images/frigider-smart.png"
         },
         {
           "id": 10,
@@ -157,16 +229,7 @@
           "pret": 1799.99,
           "rating": 4.6,
           "descriere": "Aspirator robot inteligent cu mapare laser și autonomie 120 min.",
-          "imagine": "https://images.ro/aspirator_robot_cleanbot.png"
-        },
-        {
-          "id": 1,
-          "nume_produs": "Smartphone X1",
-          "nume_producator": "TechBrand",
-          "pret": 2999.99,
-          "rating": 4.5,
-          "descriere": "Smartphone cu ecran OLED de 6.5 inch, procesor octa-core și 128GB stocare.",
-          "imagine": "https://images.ro/smartphone_x1.png"
+          "imagine": "images/aspirator-robot.png"
         }
       ]
     }
