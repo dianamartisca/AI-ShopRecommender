@@ -38,7 +38,14 @@ def display_products(parent, category, products):
 		img_label.image = image
 		img_label.pack(side='left', padx=10)
 
-		text = f"{product['nume_produs']}\n{product['nume_producator']}\n{product['pret']} RON\nRating: {product['rating']}\n{product['descriere']}"
+		if category == "Alimente":
+			text = f"{product['nume_produs']}\n{product['nume_producator']}\n{product['pret']} RON\nRating: {product['rating']}\nIngrediente: {product['ingrediente']}\nCantitate: {product['cantitate']}\n{product['descriere']}"
+		elif category == "Fashion":
+			text = f"{product['nume_produs']}\n{product['nume_producator']}\n{product['pret']} RON\nRating: {product['rating']}\nCuloare: {product['culoare']}\n{product['descriere']}"	
+		elif category == "Electronice":
+			text = f"{product['nume_produs']}\n{product['nume_producator']}\n{product['pret']} RON\nRating: {product['rating']}\n{product['descriere']}"	
+		else:
+			text = f"{product['nume_produs']}\n{product['nume_producator']}\n{product['pret']} RON\nRating: {product['rating']}\n{product['descriere']}"	
 		text_label = tk.Label(product_frame, text=text, justify='left', anchor='w')
 		text_label.pack(side='left', padx=10)
 
