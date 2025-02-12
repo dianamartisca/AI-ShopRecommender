@@ -201,6 +201,78 @@
           "rating": 4.7,
           "descriere": "Televizor 4K cu ecran de 55 inch, compatibil cu aplicații Smart TV.",
           "imagine": "images/televizor-smart.png"
+        },
+        {
+          "id": 23,
+          "nume_produs": "Laptop IdeaPad",
+          "nume_producator": "Lenovo",
+          "pret": 1599.99,
+          "rating": 4.7,
+          "descriere": "Laptop Lenovo IdeaPad 1 cu procesor AMD Ryzen 5, 15.6 inch, Full HD, 16GB RAM.",
+          "imagine": "images/laptop-ideapad.png"
+        },
+        {
+          "id": 24,
+          "nume_produs": "Laptop Vostro 3530",
+          "nume_producator": "Dell",
+          "pret": 2699.99,
+          "rating": 4.6,
+          "descriere": "Laptop Dell Vostro 3530 cu procesor Intel® Core, 15.6 inch, Full HD, 120Hz, 16GB RAM.",
+          "imagine": "images/laptop-vostro.png"
+        },
+        {
+          "id": 25,
+          "nume_produs": "Laptop MacBook Air",
+          "nume_producator": "Apple",
+          "pret": 5099.99,
+          "rating": 4.8,
+          "descriere": "Laptop Apple MacBook Air 13 inch, cu procesor Apple M3, 8 nuclee CPU și 8 nuclee GPU, 16GB RAM, 256GB SSD.",
+          "imagine": "images/laptop-macbook.png"
+        },
+        {
+          "id": 26,
+          "nume_produs": "Telefon mobil Samsung Galaxy S24 Ultra",
+          "nume_producator": "Samsung",
+          "pret": 4819.50,
+          "rating": 4.7,
+          "descriere": "Telefon mobil Samsung Galaxy S24 Ultra, Dual SIM, 12GB RAM, 256GB, 5G.",
+          "imagine": "images/samsung-galaxy.png"
+        },
+        {
+          "id": 27,
+          "nume_produs": "Telefon mobil Huawei nova 13",
+          "nume_producator": "Huawei",
+          "pret": 2499.99,
+          "rating": 4.7,
+          "descriere": "Telefon mobil Huawei nova 13, Dual SIM, 12GB RAM, 256GB.",
+          "imagine": "images/huawei-nova.png"
+        },
+        {
+          "id": 28,
+          "nume_produs": "Telefon mobil Motorola Edge 50 fusion",
+          "nume_producator": "Motorola",
+          "pret": 1549.99,
+          "rating": 4.6,
+          "descriere": "Telefon mobil Motorola Edge 50 fusion, 12GB RAM, 512GB, 5G.",
+          "imagine": "images/motorola-edge.png"
+        },
+        {
+          "id": 29,
+          "nume_produs": "Tableta Samsung Galaxy Tab A9+",
+          "nume_producator": "Samsung",
+          "pret": 1208.16,
+          "rating": 4.6,
+          "descriere": "Tableta Samsung Galaxy Tab A9+, Octa-Core, 11 inch, 8GB RAM, 128GB.",
+          "imagine": "images/tableta-samsung.png"
+        },
+        {
+          "id": 29,
+          "nume_produs": "Tableta Huawei MatePad",
+          "nume_producator": "Huawei",
+          "pret": 1999.99,
+          "rating": 4.7,
+          "descriere": "Tableta Huawei MatePad, 11.5 inch, PaperMatte Edition, 8GB RAM, 256GB, Wi-Fi, Space Gray + Smart Magnetic Keyboard.",
+          "imagine": "images/tableta-huawei.png"
         }
       ],
       "electrocasnice": [

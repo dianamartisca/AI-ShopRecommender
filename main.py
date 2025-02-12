@@ -35,7 +35,6 @@ def add_to_cart(product_name, category, products):
     # Select 3 random recommended products
     recommended = random.sample(products, min(3, len(products)))
 
-    # Stil pentru ttk.LabelFrame
     style = ttk.Style()
     style.configure("Custom.TFrame", background="cadetblue")
 
@@ -44,8 +43,14 @@ def add_to_cart(product_name, category, products):
     rec_frame.pack(fill="both", padx=10, pady=5, expand=True)
 
     # Text pentru recomandări
-    recommendation_label = tk.Label(rec_frame, text="S-ar putea să-ți placă și:", font=("Arial", 12, "bold"), bg="cadetblue", fg="white")
-    recommendation_label.pack(fill='x', pady=5, anchor='center')  # Centrat și fără chenar
+    recommendation_label = tk.Label(rec_frame, 
+                                text="S-ar putea să-ți placă și:", 
+                                font=("Arial", 12, "bold"), 
+                                bg="cadetblue", 
+                                fg="white", 
+                                anchor='w')  # Aliniat la stânga
+    recommendation_label.pack(fill='x', pady=5)  
+
 
     for product in recommended:
         product_frame = ttk.Frame(rec_frame, style="Custom.TFrame")  # Fundal
@@ -81,16 +86,16 @@ def add_to_cart(product_name, category, products):
 
 
 def display_products(parent, category, products):
-    # Folosește doar un Frame simplu pentru a înlocui LabelFrame
-    frame = ttk.Frame(parent, padding=10, style="Custom.TFrame")  # Folosește Frame în loc de LabelFrame
+    frame = ttk.Frame(parent, padding=10, style="Custom.TFrame")  
     frame.pack(padx=10, pady=10, fill='x')
 
-    # Centrarea numelui categoriei
-    label = tk.Label(frame, text=category, font=("Arial", 12, "bold"), bg="cadetblue", fg="white")
-    label.pack(fill='x', pady=5, anchor='center')  # Aici am adăugat `anchor='center'` pentru a centra textul
+    # Textul pentru categoria respectivă, aliniat la stânga
+    label = tk.Label(frame, text=category, font=("Arial", 12, "bold"), bg="cadetblue", fg="white", anchor='w')
+    label.pack(fill='x', pady=5)  # Aliniat la stânga (anchor='w')
+
 
     for product in products:
-        product_frame = ttk.Frame(frame, style="Custom.TFrame")  # Folosește stilul "Custom.TFrame" fără eticheta default
+        product_frame = ttk.Frame(frame, style="Custom.TFrame")  
         product_frame.pack(fill='x', pady=5)
 
         image_path = os.path.join("app/images", os.path.basename(product["imagine"]))
