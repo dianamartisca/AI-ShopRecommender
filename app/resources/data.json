@@ -114,16 +114,6 @@
           "imagine": "images/rochie-neagra.png"
         },
         {
-          "id": 6,
-          "nume_produs": "Pantofi sport UltraRun",
-          "nume_producator": "ActiveWear",
-          "pret": 349.99,
-          "rating": 4.6,
-          "culoare": "neagră",
-          "descriere": "Pantofi sport confortabili, din pânză, ideali pentru alergare și antrenamente.",
-          "imagine": "images/pantofi-sport.png"
-        },
-        {
           "id": 18,
           "nume_produs": "Hanorac cu imprimeu Mickey Mouse",
           "nume_producator": "LC Waikiki",
