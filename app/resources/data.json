@@ -195,12 +195,12 @@
         },
         {
           "id": 9,
-          "nume_produs": "Televizor Smart 4K UltraHD",
-          "nume_producator": "VisionTech",
-          "pret": 3299.99,
+          "nume_produs": "Televizor Samsung LED",
+          "nume_producator": "Samsung",
+          "pret": 1428.77,
           "rating": 4.7,
-          "descriere": "Televizor 4K cu ecran de 55 inch, compatibil cu aplicații Smart TV.",
-          "imagine": "images/televizor-smart.png"
+          "descriere": "Televizor SAMSUNG LED 43DU7172, 108 cm, Smart, 4K Ultra HD, Clasa G (Model 2024).",
+          "imagine": "images/televizor-samsung.png"
         },
         {
           "id": 23,
@@ -266,14 +266,68 @@
           "imagine": "images/tableta-samsung.png"
         },
         {
-          "id": 29,
+          "id": 36,
           "nume_produs": "Tableta Huawei MatePad",
           "nume_producator": "Huawei",
           "pret": 1999.99,
           "rating": 4.7,
           "descriere": "Tableta Huawei MatePad, 11.5 inch, PaperMatte Edition, 8GB RAM, 256GB, Wi-Fi, Space Gray + Smart Magnetic Keyboard.",
           "imagine": "images/tableta-huawei.png"
-        }
+        },
+        {
+          "id": 30,
+          "nume_produs": "iPad 10 (2022) v2",
+          "nume_producator": "Apple",
+          "pret": 1999.99,
+          "rating": 4.7,
+          "descriere": "Apple iPad 10 (2022) v2, 10.9 inch, 64GB, Wifi.",
+          "imagine": "images/ipad.png"
+        },
+        {
+          "id": 31,
+          "nume_produs": "Televizor TCL LED",
+          "nume_producator": "TCL",
+          "pret": 1499.99,
+          "rating": 4.7,
+          "descriere": "Televizor TCL LED 55P655, 139 cm, Smart Google TV, 4K Ultra HD, Clasa E (Model 2024).",
+          "imagine": "images/televizor-tcl.png"
+        },
+        {
+          "id": 32,
+          "nume_produs": "Televizor METZ LED",
+          "nume_producator": "METZ",
+          "pret": 1529.99,
+          "rating": 4.7,
+          "descriere": "Televizor METZ LED 50MUD7000, 126 cm, Smart Google TV, 4K Ultra HD, Clasa F (Model 2024).",
+          "imagine": "images/televizor-metz.png"
+        },
+        {
+          "id": 33,
+          "nume_produs": "Televizor LG LED",
+          "nume_producator": "LG",
+          "pret": 1388.99,
+          "rating": 4.7,
+          "descriere": "Televizor LG LED 43UT73003LA, 108 cm, Smart, 4K Ultra HD, Clasa G (Model 2024).",
+          "imagine": "images/televizor-lg.png"
+        },
+        {
+          "id": 34,
+          "nume_produs": "Smartwatch Apple Watch SE",
+          "nume_producator": "Apple",
+          "pret": 1199.99,
+          "rating": 4.4,
+          "descriere": "Apple Watch SE (2024), GPS, Carcasa Starlight Aluminium 40mm, Starlight Sport Band.",
+          "imagine": "images/apple-watch.png"
+        },
+        {
+          "id": 35,
+          "nume_produs": "Smartwatch Huawei Watch FIT 3",
+          "nume_producator": "Huawei",
+          "pret": 549.99,
+          "rating": 4.7,
+          "descriere": "Smartwatch Huawei Watch FIT 3, Black Body with Black Fluoroelastomer Strap.",
+          "imagine": "images/huawei-watch.png"
+        } 
       ],
       "electrocasnice": [
         {
@@ -288,11 +342,11 @@
         {
           "id": 4,
           "nume_produs": "Frigider SmartCool X",
-          "nume_producator": "ColdTech",
+          "nume_producator": "Bosch",
           "pret": 3499.99,
           "rating": 4.7,
           "descriere": "Frigider inteligent cu WiFi, control vocal și sistem No Frost.",
-          "imagine": "images/frigider-smart.png"
+          "imagine": "images/frigider-bosch.png"
         },
         {
           "id": 10,
@@ -302,6 +356,51 @@
           "rating": 4.6,
           "descriere": "Aspirator robot inteligent cu mapare laser și autonomie 120 min.",
           "imagine": "images/aspirator-robot.png"
+        },
+        {
+          "id": 37,
+          "nume_produs": "Frigider NeoFrost Dual Cooling",
+          "nume_producator": "Beko",
+          "pret": 2599.99,
+          "rating": 4.7,
+          "descriere": "Frigider cu două uși Beko, 375 l, NeoFrost Dual Cooling, HarvestFresh, NutriFreeze, Display touch control, No Frost Freezer, Clasa E, H 172 cm, Inox.",
+          "imagine": "images/frigider-beko.png"
+        },
+        {
+          "id": 38,
+          "nume_produs": "Frigider Starcrest",
+          "nume_producator": "Starcrest",
+          "pret": 719.90,
+          "rating": 4.4,
+          "descriere": "Frigider cu o ușă STARCREST SF-83IX-E, Clasa E, Capacitate 83L, Iluminare interioară, Compartiment gheață, H 85 cm, Inox.",
+          "imagine": "images/frigider-starcrest.png"
+        },
+        {
+          "id": 39,
+          "nume_produs": "Cuptor incorporabil Bosch",
+          "nume_producator": "Bosch",
+          "pret": 1519.99,
+          "rating": 4.7,
+          "descriere": "Cuptor incorporabil Bosch HBF153EB0, Electric, Autocurățare EcoClean Direct, 66 l, Clasa A.",
+          "imagine": "images/cuptor-bosch.png"
+        },
+        {
+          "id": 40,
+          "nume_produs": "Cuptor incorporabil Beko",
+          "nume_producator": "Beko",
+          "pret": 1129.99,
+          "rating": 4.7,
+          "descriere": "Cuptor incorporabil Beko BBIE12300XD, Electric, 72 l, Grill, SteamShine Cleaning, Timer, Clasa A, Inox.",
+          "imagine": "images/cuptor-beko.png"
+        },
+        {
+          "id": 41,
+          "nume_produs": "Cuptor incorporabil Samsung",
+          "nume_producator": "Samsung",
+          "pret": 1549.99,
+          "rating": 4.7,
+          "descriere": "Cuptor incorporabil Samsung NV68A1140BK/OL, Electric, 68 l, Autocurățare catalitică, True convection, Clasa A.",
+          "imagine": "images/cuptor-samsung.png"
         }
       ]
     }
