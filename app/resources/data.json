@@ -104,14 +104,24 @@
       ],
       "fashion": [
         {
-          "id": 5,
-          "nume_produs": "Rochie elegantă Black Night",
-          "nume_producator": "FashionStyle",
-          "pret": 499.99,
-          "rating": 4.3,
+          "id": 22,
+          "nume_produs": "Tricou damă",
+          "nume_producator": "Belice",
+          "pret": 69.98,
+          "rating": 5.0,
+          "culoare": "verde",
+          "descriere": "Tricou damă, cambrat cu guler tunică și mâneci semi.",
+          "imagine": "images/tricou-verde.png"
+        },
+        {
+          "id": 43,
+          "nume_produs": "Tricou cu flori",
+          "nume_producator": "LC Waikiki",
+          "pret": 34.99,
+          "rating": 4.8,
           "culoare": "neagră",
-          "descriere": "Rochie de seară din mătase, croială elegantă.",
-          "imagine": "images/rochie-neagra.png"
+          "descriere": "Tricou cu decolteu la baza gâtului și imprimeu floral, negru/roz pastel.",
+          "imagine": "images/tricou-flori.png"
         },
         {
           "id": 18,
@@ -134,6 +144,46 @@
           "imagine": "images/bluza-trening.png"
         },
         {
+          "id": 6,
+          "nume_produs": "Pantaloni pentru damă",
+          "nume_producator": "OEM",
+          "pret": 119.99,
+          "rating": 4.5,
+          "culoare": "neagră",
+          "descriere": "Pantaloni pentru damă, 65% bumbac, croială dreaptă, ajustabil cu șnur, interior nepieptănat.",
+          "imagine": "images/pantaloni-negri.png"
+        },
+        {
+          "id": 44,
+          "nume_produs": "Blugi elastici Sienna",
+          "nume_producator": "Marks & Spencer",
+          "pret": 158.99,
+          "rating": 4.8,
+          "culoare": "bleumarin",
+          "descriere": "Blugi elastici cu croială dreaptă, talie înaltă, fermoar și nasturi.",
+          "imagine": "images/blugi-sienna.png"
+        },
+        {
+          "id": 45,
+          "nume_produs": "Blugi evazați",
+          "nume_producator": "LC Waikiki",
+          "pret": 79.99,
+          "rating": 4.8,
+          "culoare": "albastră",
+          "descriere": "Blugi evazați din bumbac, cu talie medie și fermoar.",
+          "imagine": "images/blugi-evazati.png"
+        },
+        {
+          "id": 5,
+          "nume_produs": "Rochie elegantă Black Night",
+          "nume_producator": "FashionStyle",
+          "pret": 499.99,
+          "rating": 4.3,
+          "culoare": "neagră",
+          "descriere": "Rochie de seară din mătase, croială elegantă.",
+          "imagine": "images/rochie-neagra.png"
+        },
+        {
           "id": 20,
           "nume_produs": "Rochie-cămașă",
           "nume_producator": "LC Waikiki",
@@ -152,19 +202,27 @@
           "culoare": "roșie",
           "descriere": "Rochie elegantă cu mâneci lungi și croială evazată.",
           "imagine": "images/rochie-rosie.png"
-        },
-        {
-          "id": 22,
-          "nume_produs": "Tricou damă",
-          "nume_producator": "Belice",
-          "pret": 69.98,
-          "rating": 5.0,
-          "culoare": "verde",
-          "descriere": "Tricou damă, cambrat cu guler tunică și mâneci semi.",
-          "imagine": "images/tricou-verde.png"
         }
       ],
       "electronice": [
+        {
+          "id": 34,
+          "nume_produs": "Smartwatch Apple Watch SE",
+          "nume_producator": "Apple",
+          "pret": 1199.99,
+          "rating": 4.4,
+          "descriere": "Apple Watch SE (2024), GPS, Carcasa Starlight Aluminium 40mm, Starlight Sport Band.",
+          "imagine": "images/apple-watch.png"
+        },
+        {
+          "id": 35,
+          "nume_produs": "Smartwatch Huawei Watch FIT 3",
+          "nume_producator": "Huawei",
+          "pret": 549.99,
+          "rating": 4.7,
+          "descriere": "Smartwatch Huawei Watch FIT 3, Black Body with Black Fluoroelastomer Strap.",
+          "imagine": "images/huawei-watch.png"
+        }, 
         {
           "id": 1,
           "nume_produs": "Smartphone X1",
@@ -173,51 +231,6 @@
           "rating": 4.5,
           "descriere": "Smartphone cu ecran OLED de 6.5 inch, procesor octa-core și 128GB stocare.",
           "imagine": "images/smartphone-x1.png"
-        },
-        {
-          "id": 2,
-          "nume_produs": "Laptop UltraBook Pro",
-          "nume_producator": "MegaTech",
-          "pret": 5999.99,
-          "rating": 4.8,
-          "descriere": "Laptop performant cu procesor Intel i7, 16GB RAM și SSD 1TB.",
-          "imagine": "images/laptop-ultrabook.png"
-        },
-        {
-          "id": 9,
-          "nume_produs": "Televizor Samsung LED",
-          "nume_producator": "Samsung",
-          "pret": 1428.77,
-          "rating": 4.7,
-          "descriere": "Televizor SAMSUNG LED 43DU7172, 108 cm, Smart, 4K Ultra HD, Clasa G (Model 2024).",
-          "imagine": "images/televizor-samsung.png"
-        },
-        {
-          "id": 23,
-          "nume_produs": "Laptop IdeaPad",
-          "nume_producator": "Lenovo",
-          "pret": 1599.99,
-          "rating": 4.7,
-          "descriere": "Laptop Lenovo IdeaPad 1 cu procesor AMD Ryzen 5, 15.6 inch, Full HD, 16GB RAM.",
-          "imagine": "images/laptop-ideapad.png"
-        },
-        {
-          "id": 24,
-          "nume_produs": "Laptop Vostro 3530",
-          "nume_producator": "Dell",
-          "pret": 2699.99,
-          "rating": 4.6,
-          "descriere": "Laptop Dell Vostro 3530 cu procesor Intel® Core, 15.6 inch, Full HD, 120Hz, 16GB RAM.",
-          "imagine": "images/laptop-vostro.png"
-        },
-        {
-          "id": 25,
-          "nume_produs": "Laptop MacBook Air",
-          "nume_producator": "Apple",
-          "pret": 5099.99,
-          "rating": 4.8,
-          "descriere": "Laptop Apple MacBook Air 13 inch, cu procesor Apple M3, 8 nuclee CPU și 8 nuclee GPU, 16GB RAM, 256GB SSD.",
-          "imagine": "images/laptop-macbook.png"
         },
         {
           "id": 26,
@@ -274,6 +287,51 @@
           "imagine": "images/ipad.png"
         },
         {
+          "id": 2,
+          "nume_produs": "Laptop UltraBook Pro",
+          "nume_producator": "MegaTech",
+          "pret": 5999.99,
+          "rating": 4.8,
+          "descriere": "Laptop performant cu procesor Intel i7, 16GB RAM și SSD 1TB.",
+          "imagine": "images/laptop-ultrabook.png"
+        },
+        {
+          "id": 23,
+          "nume_produs": "Laptop IdeaPad",
+          "nume_producator": "Lenovo",
+          "pret": 1599.99,
+          "rating": 4.7,
+          "descriere": "Laptop Lenovo IdeaPad 1 cu procesor AMD Ryzen 5, 15.6 inch, Full HD, 16GB RAM.",
+          "imagine": "images/laptop-ideapad.png"
+        },
+        {
+          "id": 24,
+          "nume_produs": "Laptop Vostro 3530",
+          "nume_producator": "Dell",
+          "pret": 2699.99,
+          "rating": 4.6,
+          "descriere": "Laptop Dell Vostro 3530 cu procesor Intel® Core, 15.6 inch, Full HD, 120Hz, 16GB RAM.",
+          "imagine": "images/laptop-vostro.png"
+        },
+        {
+          "id": 25,
+          "nume_produs": "Laptop MacBook Air",
+          "nume_producator": "Apple",
+          "pret": 5099.99,
+          "rating": 4.8,
+          "descriere": "Laptop Apple MacBook Air 13 inch, cu procesor Apple M3, 8 nuclee CPU și 8 nuclee GPU, 16GB RAM, 256GB SSD.",
+          "imagine": "images/laptop-macbook.png"
+        },
+        {
+          "id": 9,
+          "nume_produs": "Televizor Samsung LED",
+          "nume_producator": "Samsung",
+          "pret": 1428.77,
+          "rating": 4.7,
+          "descriere": "Televizor SAMSUNG LED 43DU7172, 108 cm, Smart, 4K Ultra HD, Clasa G (Model 2024).",
+          "imagine": "images/televizor-samsung.png"
+        },
+        {
           "id": 31,
           "nume_produs": "Televizor TCL LED",
           "nume_producator": "TCL",
@@ -299,27 +357,27 @@
           "rating": 4.7,
           "descriere": "Televizor LG LED 43UT73003LA, 108 cm, Smart, 4K Ultra HD, Clasa G (Model 2024).",
           "imagine": "images/televizor-lg.png"
-        },
-        {
-          "id": 34,
-          "nume_produs": "Smartwatch Apple Watch SE",
-          "nume_producator": "Apple",
-          "pret": 1199.99,
-          "rating": 4.4,
-          "descriere": "Apple Watch SE (2024), GPS, Carcasa Starlight Aluminium 40mm, Starlight Sport Band.",
-          "imagine": "images/apple-watch.png"
-        },
-        {
-          "id": 35,
-          "nume_produs": "Smartwatch Huawei Watch FIT 3",
-          "nume_producator": "Huawei",
-          "pret": 549.99,
-          "rating": 4.7,
-          "descriere": "Smartwatch Huawei Watch FIT 3, Black Body with Black Fluoroelastomer Strap.",
-          "imagine": "images/huawei-watch.png"
-        } 
+        }
       ],
       "electrocasnice": [
+        {
+          "id": 10,
+          "nume_produs": "Aspirator Robot CleanBot X",
+          "nume_producator": "HomeGenius",
+          "pret": 1799.99,
+          "rating": 4.6,
+          "descriere": "Aspirator robot inteligent cu mapare laser și autonomie 120 min.",
+          "imagine": "images/aspirator-robot.png"
+        },
+        {
+          "id": 42,
+          "nume_produs": "Aspirator Robot Xiaomi S20",
+          "nume_producator": "HomeGenius",
+          "pret": 863.51,
+          "rating": 4.7,
+          "descriere": "Robot de aspirare Xiaomi S20, 5000Pa, recipient praf 400ml, recipient apă 270ml.",
+          "imagine": "images/aspirator-xiaomi.png"
+        },
         {
           "id": 3,
           "nume_produs": "Mașină de spălat EcoClean 5000",
@@ -330,6 +388,33 @@
           "imagine": "images/masina-de-spalat.png"
         },
         {
+          "id": 46,
+          "nume_produs": "Mașină de spălat rufe",
+          "nume_producator": "Arctic",
+          "pret": 1199.99,
+          "rating": 4.7,
+          "descriere": "Mașină de spălat rufe Arctic, 7 kg, 1000 rpm, Clasa D, Add-In, Motor Silent Inverter.",
+          "imagine": "images/masina-de-spalat-arctic.png"
+        },
+        {
+          "id": 49,
+          "nume_produs": "Mașină de spălat vase Beko",
+          "nume_producator": "Beko",
+          "pret": 2215.99,
+          "rating": 4.7,
+          "descriere": "Mașină de spălat vase Beko, 15 seturi, 6 programe, HygieneIntense, SteamGloss, Clasa D, 60 cm, Pearl Inox.",
+          "imagine": "images/masina-de-spalat-vase-beko.png"
+        },
+        {
+          "id": 50,
+          "nume_produs": "Mașină de spălat vase Whirlpool",
+          "nume_producator": "Whirlpool",
+          "pret": 1749.99,
+          "rating": 4.7,
+          "descriere": "Mașină de spaăat vase Whirlpool, 10 seturi, 5 programe, Clasa E, 45 cm.",
+          "imagine": "images/masina-de-spalat-vase.png"
+        },
+        {
           "id": 4,
           "nume_produs": "Frigider SmartCool X",
           "nume_producator": "Bosch",
@@ -337,15 +422,6 @@
           "rating": 4.7,
           "descriere": "Frigider inteligent cu WiFi, control vocal și sistem No Frost.",
           "imagine": "images/frigider-bosch.png"
-        },
-        {
-          "id": 10,
-          "nume_produs": "Aspirator Robot CleanBot X",
-          "nume_producator": "HomeGenius",
-          "pret": 1799.99,
-          "rating": 4.6,
-          "descriere": "Aspirator robot inteligent cu mapare laser și autonomie 120 min.",
-          "imagine": "images/aspirator-robot.png"
         },
         {
           "id": 37,
@@ -391,6 +467,24 @@
           "rating": 4.7,
           "descriere": "Cuptor incorporabil Samsung NV68A1140BK/OL, Electric, 68 l, Autocurățare catalitică, True convection, Clasa A.",
           "imagine": "images/cuptor-samsung.png"
+        },
+        {
+          "id": 47,
+          "nume_produs": "Aragaz Beko",
+          "nume_producator": "Beko",
+          "pret": 1499.99,
+          "rating": 4.7,
+          "descriere": "Aragaz Beko, 4 arzătoare, Gaz, Aprindere electrică plită/cuptor, Grill, Rotisor, High-Efficiency Gas Burner, Timer, 60 cm, Inox.",
+          "imagine": "images/aragaz-beko.png"
+        },
+        {
+          "id": 48,
+          "nume_produs": "Aragaz Arctic",
+          "nume_producator": "Arctic",
+          "pret": 1249.99,
+          "rating": 4.7,
+          "descriere": "Aragaz Arctic, 4 arzătoare, Gaz, Aprindere electrică plită/cuptor, Safety Plus, Grill, Rotisor, Timer, 50 cm, Inox.",
+          "imagine": "images/aragaz-arctic.png"
         }
       ]
     }

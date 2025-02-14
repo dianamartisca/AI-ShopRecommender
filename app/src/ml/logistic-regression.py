@@ -88,3 +88,11 @@ def perceptron(x, w0, w1):
     x = x * w1 + w0
     return sigm(x)
 
+
+#functia softmax
+def softmax(z):
+    exp_z = np.exp(z - np.max(z))  
+    return exp_z / np.sum(exp_z)
+
+
+#gradient_descent
