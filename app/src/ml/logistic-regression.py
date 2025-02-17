@@ -96,3 +96,18 @@ def softmax(z):
 
 
 #gradient_descent
+def gradient_descent(X, y, theta, learning_rate, iterations):
+    
+    # X: matricea caracteristicilor (m x n)
+    # y: vectorul țintă (m x 1)
+    # theta: vectorul inițial al parametrilor (n x 1)
+
+    m = len(y)  
+
+    for _ in range(iterations):
+        predictions = X.dot(theta) 
+        errors = predictions - y  
+        gradient = (1/m) * X.T.dot(errors)  
+        theta -= learning_rate * gradient  
+
+    return theta 
