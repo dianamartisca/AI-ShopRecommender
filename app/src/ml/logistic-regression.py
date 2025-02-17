@@ -118,3 +118,9 @@ def train(X, y, num_classes, learning_rate=0.01, iterations=1000):
         all_theta[:, c] = gradient_descent(X, y_c, theta, learning_rate, iterations)
 
     return all_theta  
+
+#functia predict
+def predict_multiclass(X, all_theta):
+    z = X @ all_theta  
+    p = softmax(z) 
+    return np.argmax(p, axis=1)
