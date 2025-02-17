@@ -84,30 +84,37 @@ print('Test input shape:', test_input.shape)
 def sigm(x):
     return 1/(1+np.exp(-x))
 
-def perceptron(x, w0, w1):
-    x = x * w1 + w0
-    return sigm(x)
-
-
 #functia softmax
 def softmax(z):
     exp_z = np.exp(z - np.max(z))  
     return exp_z / np.sum(exp_z)
 
 
-#gradient_descent
+#functia gradient_descent
 def gradient_descent(X, y, theta, learning_rate, iterations):
-    
+
     # X: matricea caracteristicilor (m x n)
-    # y: vectorul țintă (m x 1)
+    # y: vectorul țintă (m x 1) cu valori 0 sau 1
     # theta: vectorul inițial al parametrilor (n x 1)
 
     m = len(y)  
 
     for _ in range(iterations):
-        predictions = X.dot(theta) 
+        predictions = sigm(X @ theta)  
         errors = predictions - y  
-        gradient = (1/m) * X.T.dot(errors)  
+        gradient = (1/m) * (X.T @ errors)  
         theta -= learning_rate * gradient  
 
-    return theta 
+    return theta  
+
+#functia train
+def train(X, y, num_classes, learning_rate=0.01, iterations=1000):
+    m, n = X.shape  
+    all_theta = np.zeros((n, num_classes))  
+
+    for c in range(num_classes):
+        y_c = (y == c).astype(int)  
+        theta = np.random.randn(n, 1)  
+        all_theta[:, c] = gradient_descent(X, y_c, theta, learning_rate, iterations)
+
+    return all_theta  
