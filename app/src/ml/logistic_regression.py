@@ -56,7 +56,6 @@ input_data = np.array(padded_sequences)
 bias_column = np.ones((input_data.shape[0], 1))  # Column of ones
 input_data = np.hstack((bias_column, input_data))
 print(f'Input data shape -> {input_data.shape}')
-#print(input_data)
 input_word_dict = tokenizer.word_index
 num_input_tokens = len( input_word_dict )+1
 #print('Number of input tokens = {}'.format( num_input_tokens))
@@ -72,7 +71,7 @@ print('Output data shape -> {}'.format(output_data.shape))
 #print(output_data)
 num_output_tokens = len(output_word_dict) 
 #print('Number of output tokens = {}'.format(num_output_tokens))
-#print(output_word_dict)
+print(output_word_dict)
 
 
 #prepararea datelor
@@ -141,7 +140,8 @@ all_theta = train(train_input, train_output, num_output_tokens)
 #print("Shape of all_theta:", all_theta.shape)
 
 #functia predict
-def predict_multiclass(X, all_theta):
+def predict_multiclass(X):
     z = X @ all_theta  
     p = softmax(z) 
-    return np.argmax(p, axis=1)
+    print("Softmax probabilities:", p)
+    return np.argmax(p, axis=1).item()

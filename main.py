@@ -4,6 +4,11 @@ import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
 import random
+import re
+import numpy as np
+from app.src.ml.logistic_regression import predict_multiclass, input_word_dict, output_word_dict, max_input_length
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+
 
 with open('app/resources/data.json', 'r', encoding='utf-8') as f:
 	data = json.load(f)
@@ -26,18 +31,42 @@ def load_image(file_path, x, y):
         print(f"Eroare la încărcarea imaginii: {e}")
         return None
 
-def add_to_cart(product_name, category, products):
+def add_to_cart(product_id):
     """ Display a pop-up when a product is added to the cart, along with recommended products. """
     popup = tk.Toplevel()
     popup.title("Added to Cart")
     popup.geometry("1000x700")
     popup.configure(bg="#2F4F4F")  # Fundal pentru fereastra pop-up
 
+    for product in all_products:
+        if product["id"] == product_id:
+            product_name = product["nume_produs"]
+            product_details = product["rest"]
+            text = f"{product_name} {product_details}"
+            break
+
     # Confirmation message
     label = tk.Label(popup, text=f"Produsul '{product_name}' a fost adăugat în coș!", font=("Georgia", 15, "bold"), pady=10, bg="#2F4F4F", fg="white")
     label.pack()
 
-    # Select 3 random recommended products
+    text = re.sub(r'[^\w\s]','',text)
+    words = text.split()
+    words = [word.lower() for word in words]
+    tokenized_text = [[input_word_dict[entry]] for entry in words]
+    tokenized_text = pad_sequences([tokenized_text], maxlen=max_input_length, padding='post')   
+    X = tokenized_text.flatten().reshape(1, max_input_length)
+    X = np.hstack((np.ones((X.shape[0], 1)), X))
+    #print(X.shape)
+    #print(X)
+    category_index = predict_multiclass(X)
+    index_to_category = {index: category for category, index in output_word_dict.items()}
+    category = index_to_category.get(category_index, "Unknown")
+    #print(category)
+    #print(category_index)
+
+    # Select 3 random recommended products from the predicted category
+    categories = data["categories"][0] 
+    products = categories[category]
     recommended = random.sample(products, min(3, len(products)))
 
     style = ttk.Style()
@@ -51,7 +80,6 @@ def add_to_cart(product_name, category, products):
     recommendation_label = tk.Label(rec_frame, text="S-ar putea să-ți placă și:", font=("Georgia", 13, "bold"), bg="#2F4F4F", fg="white", anchor='w')  # Aliniat la stânga
     recommendation_label.pack(fill='x', pady=5)  
 
-
     for product in recommended:
         product_frame = ttk.Frame(rec_frame, style="Custom.TFrame")  # Fundal
         product_frame.pack(fill='x', pady=5)
@@ -63,11 +91,11 @@ def add_to_cart(product_name, category, products):
         img_label.image = img
         img_label.pack(side='left', padx=10)
 
-        if category == "Alimente":
+        if category == "alimente":
             text = f"{product['nume_produs']}\n{product['nume_producator']}\n{product['pret']} RON\nRating: {product['rating']}\nIngrediente: {product['ingrediente']}\nCantitate: {product['cantitate']}\n{product['descriere']}"
-        elif category == "Fashion":
+        elif category == "fashion":
             text = f"{product['nume_produs']}\n{product['nume_producator']}\n{product['pret']} RON\nRating: {product['rating']}\nCuloare: {product['culoare']}\n{product['descriere']}"    
-        elif category == "Electronice":
+        elif category == "electronice":
             text = f"{product['nume_produs']}\n{product['nume_producator']}\n{product['pret']} RON\nRating: {product['rating']}\n{product['descriere']}"    
         else:
             text = f"{product['nume_produs']}\n{product['nume_producator']}\n{product['pret']} RON\nRating: {product['rating']}\n{product['descriere']}"
@@ -77,7 +105,7 @@ def add_to_cart(product_name, category, products):
 
         cart_icon = load_image("app/images/cos-de-cumparaturi.png", 40, 40)
         if cart_icon:
-            cart_button = tk.Button(product_frame, image=cart_icon, command=lambda p=product["nume_produs"]: add_to_cart(p, category, products), bg="#2F4F4F", borderwidth=0)
+            cart_button = tk.Button(product_frame, image=cart_icon, command=lambda p=product["nume_produs"]: add_to_cart(p), bg="#2F4F4F", borderwidth=0)
             cart_button.image = cart_icon
             cart_button.pack(side='right', padx=10)
 
@@ -120,7 +148,7 @@ def display_products(parent, category, products):
         # Iconiță coș de cumpărături
         cart_icon = load_image("app/images/cos-de-cumparaturi.png", 40, 40)  # Iconița de coș
         if cart_icon:
-            cart_button = tk.Button(product_frame, image=cart_icon, command=lambda p=product["nume_produs"]: add_to_cart(p, category, products), bg="#2F4F4F", borderwidth=0)
+            cart_button = tk.Button(product_frame, image=cart_icon, command=lambda p=product["id"]: add_to_cart(p), bg="#2F4F4F", borderwidth=0)
             cart_button.image = cart_icon
             cart_button.pack(side='right', padx=10)
 
@@ -136,26 +164,11 @@ root.title("Catalog Produse")
 root.geometry("1250x700")
 root.configure(bg="#2F4F4F")
 
-# 🔹 Define style for frame and add layout
+# Define style for frame and add layout
 style = ttk.Style()
 style.configure("Custom.TFrame", background="#2F4F4F")
-#style.configure("Custom.TLabelFrame", 
-#                background="#2F4F4F",  # Fundalul pentru LabelFrame
-#                foreground="white", 
-#                font=("Georgia", 12, "bold"))
 
-#style.configure("Custom.TLabelFrame.label", 
-#                background="#2F4F4F",  # Fundal #2F4F4F pentru text
-#                foreground="white", 
-#                font=("Georgia", 12, "bold"))
-
-#style.layout("Custom.TLabelFrame",
-#             [("TLabelFrame.label", {"sticky": "w"}),
-#              ("TLabelFrame.frame", {"sticky": "nsew"})])
-
-#style.configure("Custom.TLabel", background="#2F4F4F", foreground="white")
-
-# 🔹 Canvas pentru scroll și fundal
+# Canvas pentru scroll și fundal
 canvas = tk.Canvas(root, bg="#2F4F4F")
 scrollbar = ttk.Scrollbar(root, orient="vertical", command=canvas.yview)
 
@@ -173,9 +186,32 @@ canvas.configure(yscrollcommand=scrollbar.set)
 canvas.pack(side="left", fill="both", expand=True)
 scrollbar.pack(side="right", fill="y")
 
-# 🔹 Aplică stilul și în display_products
+# Aplică stilul și în display_products
 for category, products in data["categories"][0].items():
     display_products(scroll_frame, category.capitalize(), products)
+
+all_products = []
+
+for category, products in data["categories"][0].items():
+    for product in products:
+        product_id = product["id"]
+        product_name = product["nume_produs"]
+
+        details = f"{product['nume_producator']} {product['pret']} RON {product['rating']} rating"
+        
+        if category == "alimente":
+            details += f" {product['ingrediente']} {product['cantitate']} {product.get('descriere', '')}"
+        elif category == "fashion":
+            details += f" {product['culoare']} {product.get('descriere', '')}"
+        else: 
+            details += f" {product.get('descriere', '')}"
+        
+        all_products.append({
+            "id": product_id,
+            "nume_produs": product_name,
+            "rest": details.strip()
+        })
+
 
 root.bind_all("<MouseWheel>", lambda event: on_mouse_wheel(event, canvas))
 root.mainloop()
