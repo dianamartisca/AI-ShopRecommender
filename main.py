@@ -7,10 +7,11 @@ from PIL import Image, ImageTk
 import random
 import warnings
 import tensorflow as tf
+import numpy as np
 from transformers import pipeline
 from transformers.utils import logging
 from app.src.ml.logistic_regression import predict
-#from sentence_transformers import SentenceTransformer, util
+from sentence_transformers import SentenceTransformer, util
 
 # Suppress all TensorFlow warnings
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"  
@@ -178,16 +179,53 @@ def on_mouse_wheel(event, canvas):
 	else:
 		canvas.yview_scroll(1, "units")
 
-def chatbot():
+def chatbot(products):
     print("Eu sunt asistentul tău virtual. Cu ce te pot ajuta?")
     while True:
         question = input("Întrebare: ")
         qa_pipeline = pipeline("question-answering", model="deepset/roberta-base-squad2")
-        context = "The iPhone 15 Pro Max has a titanium frame and offers up to 29 hours of battery life."
-        result = qa_pipeline(question=question, context=context)
+        result = qa_pipeline(question=question, context=products)
         print("Răspuns:", result["answer"]) 
 
-chatbot_thread = threading.Thread(target=chatbot, daemon=True)
+'''def chatbot(products):
+    # Load a pre-trained Sentence Transformer model
+    model = SentenceTransformer("all-MiniLM-L6-v2")
+    # Convert all product descriptions to embeddings
+    product_embeddings = model.encode(products, convert_to_tensor=True)
+
+    print("Eu sunt asistentul tău virtual. Cu ce te pot ajuta?")
+    while True:
+        # User's question
+        question = input("Întrebare: ")
+        if question.lower() == "exit":
+            break
+        # Embed the question
+        query_embedding = model.encode(question, convert_to_tensor=True)
+        # Compute cosine similarities
+        similarities = util.pytorch_cos_sim(query_embedding, product_embeddings)[0]  # [0] because it's a 2D tensor
+        best_match_idx = int(similarities.argmax())  # Get the index of the highest similarity
+        # Print the most relevant product
+        print(f"Răspuns: {products[best_match_idx]}")'''
+
+def chatbot_data(data):
+    all_products = []
+    for category, products in data["categories"][0].items():
+        if category == "alimente":
+            for product in products:
+                one_product = f"Produsul din categoria {category} cu numele {product['nume_produs']} este produs de {product['nume_producator']}, are prețul {product['pret']} RON, ratingul {product['rating']}, ingredientele {product['ingrediente']}, cantitatea {product['cantitate']} și este {product['descriere']}."
+                all_products.append(one_product)
+        elif category == "fashion":
+            for product in products:
+                one_product = f"Produsul din categoria {category} cu numele {product['nume_produs']} este produs de {product['nume_producator']}, are prețul {product['pret']} RON, ratingul {product['rating']}, culoarea {product['culoare']} și este {product['descriere']}."
+                all_products.append(one_product)
+        else:
+            for product in products:
+                one_product = f"Produsul din categoria {category} cu numele {product['nume_produs']} este produs de {product['nume_producator']}, are prețul {product['pret']} RON, ratingul {product['rating']} și este {product['descriere']}."
+                all_products.append(one_product)
+    return "\n".join(all_products)
+
+products_chatbot = chatbot_data(data)
+chatbot_thread = threading.Thread(target=chatbot, args=(products_chatbot,), daemon=True)
 chatbot_thread.start()
 
 root = tk.Tk()
@@ -222,4 +260,3 @@ for category, products in data["categories"][0].items():
 
 root.bind_all("<MouseWheel>", lambda event: on_mouse_wheel(event, canvas))
 root.mainloop()
-
