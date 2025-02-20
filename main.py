@@ -7,11 +7,9 @@ from PIL import Image, ImageTk
 import random
 import warnings
 import tensorflow as tf
-import numpy as np
 from transformers import pipeline
 from transformers.utils import logging
 from app.src.ml.logistic_regression import predict
-from sentence_transformers import SentenceTransformer, util
 
 # Suppress all TensorFlow warnings
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"  
@@ -23,6 +21,9 @@ logging.set_verbosity_error()
 
 with open('app/resources/data.json', 'r', encoding='utf-8') as f:
 	data = json.load(f)
+
+with open("app/resources/phrases.txt", "r", encoding="utf-8") as file:
+    phrases = file.read()  
      
 def extract_products(data):
     all_products = []
@@ -31,7 +32,6 @@ def extract_products(data):
         for product in products:
             product_id = product["id"]
             product_name = product["nume_produs"]
-
             details = f"{product['nume_producator']} {product['pret']} RON {product['rating']} rating"
         
             if category == "alimente":
@@ -40,7 +40,6 @@ def extract_products(data):
                 details += f" {product['culoare']} {product.get('descriere', '')}"
             else: 
                 details += f" {product.get('descriere', '')}"
-        
             all_products.append({
                 "id": product_id,
                 "nume_produs": product_name,
@@ -158,10 +157,8 @@ def display_products(parent, category, products):
             text = f"{product['nume_produs']}\n{product['nume_producator']}\n{product['pret']} RON\nRating: {product['rating']}\nIngrediente: {product['ingrediente']}\nCantitate: {product['cantitate']}\n{product['descriere']}"
         elif category == "Fashion":
             text = f"{product['nume_produs']}\n{product['nume_producator']}\n{product['pret']} RON\nRating: {product['rating']}\nCuloare: {product['culoare']}\n{product['descriere']}"    
-        elif category == "Electronice":
-            text = f"{product['nume_produs']}\n{product['nume_producator']}\n{product['pret']} RON\nRating: {product['rating']}\n{product['descriere']}"    
         else:
-            text = f"{product['nume_produs']}\n{product['nume_producator']}\n{product['pret']} RON\nRating: {product['rating']}\n{product['descriere']}"    
+            text = f"{product['nume_produs']}\n{product['nume_producator']}\n{product['pret']} RON\nRating: {product['rating']}\n{product['descriere']}"      
 
         text_label = tk.Label(product_frame, text=text, justify='left', anchor='w', bg="#2F4F4F", fg="white", font=("Georgia", 10))  
         text_label.pack(side='left', padx=10)
@@ -178,34 +175,6 @@ def on_mouse_wheel(event, canvas):
 		canvas.yview_scroll(-1, "units")
 	else:
 		canvas.yview_scroll(1, "units")
-
-def chatbot(products):
-    print("Eu sunt asistentul tău virtual. Cu ce te pot ajuta?")
-    while True:
-        question = input("Întrebare: ")
-        qa_pipeline = pipeline("question-answering", model="deepset/roberta-base-squad2")
-        result = qa_pipeline(question=question, context=products)
-        print("Răspuns:", result["answer"]) 
-
-'''def chatbot(products):
-    # Load a pre-trained Sentence Transformer model
-    model = SentenceTransformer("all-MiniLM-L6-v2")
-    # Convert all product descriptions to embeddings
-    product_embeddings = model.encode(products, convert_to_tensor=True)
-
-    print("Eu sunt asistentul tău virtual. Cu ce te pot ajuta?")
-    while True:
-        # User's question
-        question = input("Întrebare: ")
-        if question.lower() == "exit":
-            break
-        # Embed the question
-        query_embedding = model.encode(question, convert_to_tensor=True)
-        # Compute cosine similarities
-        similarities = util.pytorch_cos_sim(query_embedding, product_embeddings)[0]  # [0] because it's a 2D tensor
-        best_match_idx = int(similarities.argmax())  # Get the index of the highest similarity
-        # Print the most relevant product
-        print(f"Răspuns: {products[best_match_idx]}")'''
 
 def chatbot_data(data):
     all_products = []
@@ -224,8 +193,19 @@ def chatbot_data(data):
                 all_products.append(one_product)
     return "\n".join(all_products)
 
+def chatbot(products):
+    print("I am your virtual assistant. What can I help you with?")
+    while True:
+        question = input("Question: ")
+        if question == "exit":
+            break
+        qa_pipeline = pipeline("question-answering", model="deepset/roberta-base-squad2")
+        result = qa_pipeline(question=question, context=products)
+        print("Answer:", result["answer"]) 
+
 products_chatbot = chatbot_data(data)
-chatbot_thread = threading.Thread(target=chatbot, args=(products_chatbot,), daemon=True)
+#chatbot_thread = threading.Thread(target=chatbot, args=(products_chatbot,), daemon=True)
+chatbot_thread = threading.Thread(target=chatbot, args=(phrases,), daemon=True)
 chatbot_thread.start()
 
 root = tk.Tk()

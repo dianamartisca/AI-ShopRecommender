@@ -162,9 +162,9 @@ def predict_multiclass(X):
     probabilities = softmax(z) 
     return np.argmax(probabilities, axis=1).item()
 
-def predict(text):
-    text = re.sub(r'[^\w\s]','',text)
-    words = text.split()
+def predict(product):
+    product = re.sub(r'[^\w\s]','',product)
+    words = product.split()
     words = [word.lower() for word in words]
     tokenized_text = [[input_word_dict[entry]] for entry in words]
     tokenized_text = pad_sequences([tokenized_text], maxlen=max_input_length, padding='post')   
