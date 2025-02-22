@@ -8,10 +8,8 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 
 #citirea datelor
-def read_data(file_path):
-    with open(file_path, 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    return data
+with open('app/resources/data.json', 'r', encoding='utf-8') as f:
+	data = json.load(f)
 
 
 #preprocesarea datelor
@@ -144,7 +142,6 @@ def train(X, y, num_classes, learning_rate=0.01, iterations=1000):
     return all_theta  
 
 def train_model():
-    data = read_data('app/resources/data.json')
     all_products, categories = extract_data(data)
     input_data, max_input_length, input_word_dict = preprocess_input(all_products)
     output_data, output_word_dict, num_output_tokens = preprocess_output(categories)
@@ -156,13 +153,47 @@ def train_model():
 
 all_theta, input_word_dict, output_word_dict, max_input_length = train_model()
 
+
 #functia predict
 def predict_multiclass(X):
     z = X @ all_theta  
     probabilities = softmax(z) 
     return np.argmax(probabilities, axis=1).item()
 
-def predict(product):
+def extract_products(data):
+    all_products = []
+
+    for category, products in data["categories"][0].items():
+        for product in products:
+            product_id = product["id"]
+            product_name = product["nume_produs"]
+            details = f"{product['nume_producator']} {product['pret']} RON {product['rating']} rating"
+        
+            if category == "alimente":
+                details += f" {product['ingrediente']} {product['cantitate']} {product.get('descriere', '')}"
+            elif category == "fashion":
+                details += f" {product['culoare']} {product.get('descriere', '')}"
+            else: 
+                details += f" {product.get('descriere', '')}"
+            all_products.append({
+                "id": product_id,
+                "nume_produs": product_name,
+                "rest": details.strip()
+            })
+    return all_products
+
+def get_product_info(product_id):
+    all_products = extract_products(data)
+    for product in all_products:
+        if product["id"] == product_id:
+            product_name = product["nume_produs"]
+            product_details = product["rest"]
+            text = f"{product_name} {product_details}"
+            break
+    return text
+
+def predict(product_id):
+    product = get_product_info(product_id)
     product = re.sub(r'[^\w\s]','',product)
     words = product.split()
     words = [word.lower() for word in words]

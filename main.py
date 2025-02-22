@@ -10,6 +10,7 @@ import tensorflow as tf
 from transformers import pipeline
 from transformers.utils import logging
 from app.src.ml.logistic_regression import predict
+from app.src.ml.knn import predict_knn
 
 # Suppress all TensorFlow warnings
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"  
@@ -24,28 +25,6 @@ with open('app/resources/data.json', 'r', encoding='utf-8') as f:
 
 with open("app/resources/phrases.txt", "r", encoding="utf-8") as file:
     phrases = file.read()  
-     
-def extract_products(data):
-    all_products = []
-
-    for category, products in data["categories"][0].items():
-        for product in products:
-            product_id = product["id"]
-            product_name = product["nume_produs"]
-            details = f"{product['nume_producator']} {product['pret']} RON {product['rating']} rating"
-        
-            if category == "alimente":
-                details += f" {product['ingrediente']} {product['cantitate']} {product.get('descriere', '')}"
-            elif category == "fashion":
-                details += f" {product['culoare']} {product.get('descriere', '')}"
-            else: 
-                details += f" {product.get('descriere', '')}"
-            all_products.append({
-                "id": product_id,
-                "nume_produs": product_name,
-                "rest": details.strip()
-            })
-    return all_products
 
 def load_image(file_path, x, y):
     try:
@@ -65,31 +44,32 @@ def load_image(file_path, x, y):
         print(f"Eroare la încărcarea imaginii: {e}")
         return None
 
-def add_to_cart(product_id):
+def add_to_cart(product_id, product_name):
     """ Display a pop-up when a product is added to the cart, along with recommended products. """
     popup = tk.Toplevel()
     popup.title("Added to Cart")
     popup.geometry("1000x700")
     popup.configure(bg="#2F4F4F")  
 
-    all_products = extract_products(data)
-    for product in all_products:
-        if product["id"] == product_id:
-            product_name = product["nume_produs"]
-            product_details = product["rest"]
-            text = f"{product_name} {product_details}"
-            break
-
     # Confirmation message
     label = tk.Label(popup, text=f"Produsul '{product_name}' a fost adăugat în coș!", font=("Georgia", 15, "bold"), pady=10, bg="#2F4F4F", fg="white")
     label.pack()
 
+    '''#Using logistic_regression
     # Select 3 random recommended products from the predicted category
-    category = predict(text)
+    category = predict(product_id)
     categories = data["categories"][0] 
     products = categories[category]
     filtered_products = [p for p in products if p["id"] != product_id]
-    recommended = random.sample(filtered_products, min(3, len(filtered_products)))
+    recommended = random.sample(filtered_products, min(3, len(filtered_products))) '''
+
+    #Using knn
+    id_list = predict_knn(product_id)
+    recommended = []
+    for category, products in data["categories"][0].items():
+        for product in products:
+            if product["id"] in id_list:
+                recommended.append(product)
 
     style = ttk.Style()
     style.configure("Custom.TFrame", background="#2F4F4F")
@@ -127,7 +107,7 @@ def add_to_cart(product_id):
 
         cart_icon = load_image("app/images/cos-de-cumparaturi.png", 40, 40)
         if cart_icon:
-            cart_button = tk.Button(product_frame, image=cart_icon, command=lambda p=product["id"]: add_to_cart(p), bg="#2F4F4F", borderwidth=0)
+            cart_button = tk.Button(product_frame, image=cart_icon, command=lambda p_id=product["id"], p_name=product["nume_produs"]: add_to_cart(p_id, p_name), bg="#2F4F4F", borderwidth=0)
             cart_button.image = cart_icon
             cart_button.pack(side='right', padx=10)
 
@@ -166,7 +146,7 @@ def display_products(parent, category, products):
         # Iconiță coș de cumpărături
         cart_icon = load_image("app/images/cos-de-cumparaturi.png", 40, 40)  
         if cart_icon:
-            cart_button = tk.Button(product_frame, image=cart_icon, command=lambda p=product["id"]: add_to_cart(p), bg="#2F4F4F", borderwidth=0)
+            cart_button = tk.Button(product_frame, image=cart_icon, command=lambda p_id=product["id"], p_name=product["nume_produs"]: add_to_cart(p_id, p_name), bg="#2F4F4F", borderwidth=0)
             cart_button.image = cart_icon
             cart_button.pack(side='right', padx=10)
 
